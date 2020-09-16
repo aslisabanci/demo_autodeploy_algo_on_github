@@ -1,2 +1,27 @@
-# Jupyter notebook -> Model creation -> Automated CI Deploy to Algorithmia
-Demonstrating a model development repo for an Algorithmia algorithm hosted on Github; using Deploy to Algorithmia Github Action to deploy its ML model and algorithm scripts to Algorithmia through its CI workflow.
+# Automated Model and Algorithm Deployment from Github to Algorithmia
+
+This is an example repository demonstrating an automated workflow between Github and Algorithmia where:
+- You have an algorithm on Algorithmia as the scalable inference endpoint for your ML model. 
+- Your algorithm's repository host is Github.
+- You are either 
+  - using a Jupyter notebook to train and evaluate your ML model and to create your inference script & dependencies
+  - checking your saved model file into your repository
+
+And to automatize your model deployment to Algorithmia, you are using an awesome Github Actions workflow!
+
+This example workflow helps you deploy your model to Algorithmia and update your inference API to use the new model, whenever you do a Git push to your repository. 
+
+Depending on your model development preference:
+  - If you're developing your ML model on a Jupyter notebook, you can configure the workflow with the notebook path and tell it where to save the model file. In this case, the workflow will run the notebook on the CI worker machine's from-scratch environment. Through our utility script, your notebook will get the path for where to save the ML model object. 
+  - If you have an already saved model checked-in to your repository, you can configure the workflow with the existing model file path.
+  
+In both scenarios, the workflow will get the model file and upload it to the configured data collection on Algorithmia. 
+
+To get your inference endpoint use this newly uploaded model, the workflow will make the connection between your inference algorithm and the uploaded model file. 
+
+In addition to that, your inference script <-> model file manifest file will give you certain metadata such as:
+- Which repository this model file was uploaded from?
+- What is the Github commit SHA and the commit message linked to this upload?
+- When did this upload happen?
+
+Cool!
