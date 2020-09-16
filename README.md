@@ -2,7 +2,7 @@
 
 This is an example repository demonstrating an automated workflow between Github and Algorithmia where:
 - You have an algorithm on Algorithmia as the scalable inference endpoint for your ML model. 
-- Your algorithm's repository host is Github.
+- Your algorithm's repository host is Github. Check [out this demo repo for an algorith with Algorithmia as the repository host](https://github.com/aslisabanci/demo_autodeploy_algo_on_algorithmia)
 - You are either 
   - using a Jupyter notebook to train and evaluate your ML model and to create your inference script & dependencies
   - checking your saved model file into your repository
@@ -19,9 +19,9 @@ In both scenarios, the workflow will get the model file and upload it to the con
 
 To get your inference endpoint use this newly uploaded model, the workflow will make the connection between your inference algorithm and the uploaded model file. 
 
-In addition to that, your inference script <-> model file manifest file will give you certain metadata such as:
-- Which repository this model file was uploaded from?
-- What is the Github commit SHA and the commit message linked to this upload?
+In addition to that, a manifest file will inform you with model metadata such as:
+- Which Github repository was this model file uploaded from?
+- What is the Github commit SHA and the commit message resulting in this automated upload?
 - When did this upload happen?
 
-Cool!
+Cool, right? To see the inference algorithm for this repository's XGBoost sentiment analysis model, check out the [automated XGBoost example algorithm on Algorithmia](https://algorithmia.com/algorithms/asli/xgboost_automated_github).
