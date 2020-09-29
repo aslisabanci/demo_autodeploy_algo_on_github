@@ -21,8 +21,8 @@ jobs:
           algorithmia_api_key: ${{ secrets.ALGORITHMIA_API_KEY }}
           algorithmia_username: ${{ secrets.ALGORITHMIA_USERNAME }}
           algorithmia_email: ${{ secrets.ALGORITHMIA_EMAIL }}
-          algorithmia_algoname:  xgboost_automated_github
-          github_pat: ${{ secrets.PAT }}
+          algorithmia_algoname: xgboost_automated_github
+          github_pat: ${{ secrets.GIT_PAT }}
           github_username: aslisabanci
           # notebook_path: model.ipynb
           # model_path: model.pkl
